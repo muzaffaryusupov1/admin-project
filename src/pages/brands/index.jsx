@@ -87,7 +87,6 @@ function BrandPage() {
             </Card>
 
             <Modal
-                maskClosable={false}
                 title={isUpdate ? "Update brand" : "Add brand"}
                 open={isModalOpen}
                 onCancel={handleCancel}
