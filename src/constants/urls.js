@@ -22,3 +22,15 @@ export const bannerList = '/banner'
 export const bannerPost = '/banner'
 export const bannerPatch = (id) => `/banner/${id}`
 export const bannerDelete = (id) => `/banner/${id}`
+
+// Orders
+export const ordersList = '/orders?_relations=products,users'
+export const ordersPost = '/orders'
+export const ordersPatch = (id) => `/orders/${id}`
+export const ordersDelete = (id) => `/orders/${id}`
+
+// Users
+export const usersList = '/users'
+export const usersPost = '/users'
+export const usersPatch = (id) => `/users/${id}`
+export const usersDelete = (id) => `/users/${id}`

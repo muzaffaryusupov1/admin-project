@@ -87,12 +87,12 @@ function BrandPage() {
             </Card>
 
             <Modal
-                maskClosable={false}
                 title={isUpdate ? "Update brand" : "Add brand"}
                 open={isModalOpen}
                 onCancel={handleCancel}
                 okText={isUpdate ? 'Update' : 'Add'}
                 onOk={handleSubmit}
+                loading={reload}
             >
                 <Form form={form} onFinish={handleFinish}>
                     <Form.Item label="Title" name='title' rules={[{

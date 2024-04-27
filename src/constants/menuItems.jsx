@@ -4,7 +4,8 @@ import {
     HomeOutlined,
     InboxOutlined,
     AppstoreOutlined,
-    AreaChartOutlined
+    AreaChartOutlined,
+    CreditCardOutlined
 } from '@ant-design/icons';
 
 
@@ -33,5 +34,10 @@ export const menuItems = [
         key: '/banner',
         icon: <AreaChartOutlined />,
         label: <Link to='/banner'>Banner</Link>,
+    },
+    {
+        key: '/orders',
+        icon: <CreditCardOutlined />,
+        label: <Link to='/orders'>Orders</Link>,
     },
 ]

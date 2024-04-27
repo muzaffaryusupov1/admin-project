@@ -1,3 +1,4 @@
+import OrdersPage from "../../orders";
 import FormCharacteristic from "./FormCharacteristic";
 import FormImages from "./FormImages";
 import FormPrices from "./FormPrices";
@@ -9,5 +10,6 @@ export {
     FormTexts,
     FormPrices,
     FormImages,
-    FormCharacteristic
+    FormCharacteristic,
+    OrdersPage
 }

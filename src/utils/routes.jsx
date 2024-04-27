@@ -1,4 +1,5 @@
 import { Banner, BrandsPage, Categories, Dashboard, Logout, Products } from "../pages";
+import OrdersPage from "../pages/orders";
 
 export const routes = [
     {
@@ -35,5 +36,10 @@ export const routes = [
         id: 7,
         path: '/banner',
         component: <Banner/>
+    },
+    {
+        id: 8,
+        path: '/orders',
+        component: <OrdersPage/>
     },
 ]
