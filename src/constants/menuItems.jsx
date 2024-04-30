@@ -7,37 +7,35 @@ import {
     AreaChartOutlined,
     CreditCardOutlined
 } from '@ant-design/icons';
-
-
 export const menuItems = [
     {
         key: '/',
         icon: <HomeOutlined />,
-        label: <Link to='/'>Dashboard</Link>,
+        label: <Link to='/'>Boshqaruv paneli</Link>,
     },
     {
         key: '/products',
         icon: <InboxOutlined />,
-        label: <Link to='/products'>Products</Link>,
+        label: <Link to='/products'>Mahsulotlar</Link>,
     },
     {
         key: '/categories',
         icon: <AlignLeftOutlined />,
-        label: <Link to='/categories'>Categories</Link>,
+        label: <Link to='/categories'>Kategoriyalar</Link>,
     },
     {
         key: '/brands',
         icon: <AppstoreOutlined />,
-        label: <Link to='/brands'>Brands</Link>,
+        label: <Link to='/brands'>Brandlar</Link>,
     },
     {
         key: '/banner',
         icon: <AreaChartOutlined />,
-        label: <Link to='/banner'>Banner</Link>,
+        label: <Link to='/banner'>Bannerlar</Link>,
     },
     {
         key: '/orders',
         icon: <CreditCardOutlined />,
-        label: <Link to='/orders'>Orders</Link>,
+        label: <Link to='/orders'>Buyurtmalar</Link>,
     },
 ]

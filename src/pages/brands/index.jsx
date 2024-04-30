@@ -7,6 +7,7 @@ import { isUrlValid } from '../../utils/helpers';
 import useDeleteModal from '../../hooks/useDeleteModal';
 
 const { Meta } = Card
+
 function BrandPage() {
     const [form] = Form.useForm();
     const postRequest = usePostRequest({ url: brandsPost })
@@ -32,7 +33,7 @@ function BrandPage() {
 
     const handleFinish = async (data) => {
         const { success } = isUpdate ? await patchRequest.request({ url: brandsPatch(isUpdate), data }) : await postRequest.request({ data })
-        if (success){
+        if (success) {
             reload()
             handleCancel()
         }
@@ -43,8 +44,8 @@ function BrandPage() {
     }
 
     const handleEdit = (item) => {
-        form.setFieldsValue(item)
         setIsUpdate(item.id)
+        form.setFieldsValue(item)
         setIsModalOpen(true)
     }
 
@@ -52,7 +53,7 @@ function BrandPage() {
     return (
         <div>
             <Card title='Brands' extra={<Button onClick={handleAdd}>+ Add Brands</Button>} loading={loading}>
-                <Row gutter={[16,16]}>
+                <Row gutter={[16, 16]}>
                     {
                         brands?.map(({ id, image, title }) => (
                             <Col key={id}>
@@ -66,7 +67,7 @@ function BrandPage() {
                                         <img
                                             alt="example"
                                             src={image}
-                                            style={{width: 300, height: 180, objectFit: 'contain'}}
+                                            style={{ width: 300, height: 180, objectFit: 'contain' }}
                                         />
                                     }
                                     actions={[
@@ -87,12 +88,13 @@ function BrandPage() {
             </Card>
 
             <Modal
+                maskClosable={false}
                 title={isUpdate ? "Update brand" : "Add brand"}
                 open={isModalOpen}
                 onCancel={handleCancel}
                 okText={isUpdate ? 'Update' : 'Add'}
                 onOk={handleSubmit}
-                loading={reload}
+                forceRender={true}
             >
                 <Form form={form} onFinish={handleFinish}>
                     <Form.Item label="Title" name='title' rules={[{

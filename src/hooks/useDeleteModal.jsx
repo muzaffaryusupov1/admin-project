@@ -3,7 +3,6 @@ import { Modal } from "antd";
 import { useDeleteRequest } from './request';
 const { confirm } = Modal;
 
-
 function useDeleteModal(){
     const deleteRequest = useDeleteRequest()
     return (deleteUrl, reload) => (

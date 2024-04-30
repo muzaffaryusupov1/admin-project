@@ -58,8 +58,8 @@ function Categories() {
   ];
 
   const handleRecommended = async (e, id) => {
-    const { succes } = await patchRequest.request({ url: categoriesPatch(id), data: { isRecommended: e } })
-    if (succes) {
+    const { success } = await patchRequest.request({ url: categoriesPatch(id), data: { isRecommended: e } })
+    if (success) {
       reload()
     }
   }
@@ -70,8 +70,8 @@ function Categories() {
   }
 
   const handleFinish = async (data) => {
-    const { succes } = isUpdate ? await patchRequest.request({ url: categoriesPatch(isUpdate), data }) : await postRequest.request({ data })
-    if (succes) {
+    const { success } = isUpdate ? await patchRequest.request({ url: categoriesPatch(isUpdate), data }) : await postRequest.request({ data })
+    if (success) {
       reload()
       form.resetFields()
       setIsUpdate(null)

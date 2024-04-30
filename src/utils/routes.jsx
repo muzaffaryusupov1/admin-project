@@ -1,4 +1,4 @@
-import { Banner, BrandsPage, Categories, Dashboard, Logout, Products } from "../pages";
+import { Banner, BrandsPage, Categories, Dashboard, Login, Logout, Products } from "../pages";
 import OrdersPage from "../pages/orders";
 
 export const routes = [
@@ -20,25 +20,30 @@ export const routes = [
     {
         id: 4,
         path: '/login',
-        component: <Logout/>
+        component: <Login/>
     },
     {
         id: 5,
+        path: '/logout',
+        component: <Logout/>
+    },
+    {
+        id: 6,
         path: '*',
         component: <Dashboard/>
     },
     {
-        id: 6,
+        id: 7,
         path: '/brands',
         component: <BrandsPage/>
     },
     {
-        id: 7,
+        id: 8,
         path: '/banner',
         component: <Banner/>
     },
     {
-        id: 8,
+        id: 9,
         path: '/orders',
         component: <OrdersPage/>
     },

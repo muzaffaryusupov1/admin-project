@@ -4,7 +4,7 @@ function FormTexts() {
     return (
         <Row>
             <Col span={24}>
-                <Form.Item label="Title" name='title' rules={[{
+                <Form.Item label="Nomi" name='title' rules={[{
                     type: 'string',
                     required: true,
                     message: 'Maydon Bo\'sh'
@@ -22,7 +22,7 @@ function FormTexts() {
                 </Form.Item>
             </Col>
             <Col span={24}>
-                <Form.Item label="Model" name='model' rules={[{
+                <Form.Item label="Modeli" name='model' rules={[{
                     type: 'string',
                     required: true,
                     message: 'Maydon Bo\'sh'
@@ -31,7 +31,7 @@ function FormTexts() {
                 </Form.Item>
             </Col>
             <Col span={24}>
-                <Form.Item label="Description" name='desc' rules={[{
+                <Form.Item label="Mahsulot ta'rifi" name='desc' rules={[{
                     type: 'string',
                     required: true,
                     message: 'Maydon Bo\'sh',

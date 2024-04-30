@@ -22,45 +22,46 @@ function Products() {
 
   const columns = [
     {
-      title: 'Image',
+      title: 'Rasmi',
       dataIndex: 'mainImage',
       render: (image) => <Image src={image} width={150} height={70} style={{ objectFit: 'contain' }} />
     },
     {
-      title: 'Title',
+      title: 'Nomi',
       dataIndex: 'model',
     },
     {
-      title: 'Price',
+      title: 'Narxi',
       dataIndex: 'price',
       render: (price) => <span>{price.toLocaleString()} sum</span>
     },
     {
-      title: 'Stock',
+      title: 'Sotuvda borligi',
       dataIndex: 'stock',
       render: (st) => <p>{st ? 'Bor' : 'Qolmagan'}</p>
     },
     {
-      title: 'Is recommended',
+      title: 'Rekomendatsiyaga chiqarish',
       render: (item) => (
-        <Switch checkedChildren="True" unCheckedChildren="False" defaultChecked={!!item.isRecommended} onChange={(e) => handleRecommended(e, item.id)} />
+        <Switch checkedChildren="Olib tashlash" unCheckedChildren="Chiqarish" defaultChecked={!!item.isRecommended} onChange={(e) => handleRecommended(e, item.id)} />
       )
     },
     {
-      title: 'Actions',
+      title: 'Qo\'shimcha',
       render: (item) => (
         <Space>
-          <Button icon={<EditOutlined />} onClick={() => handleEdit(item)} />
-          <Button icon={<DeleteOutlined />} danger onClick={() => deleteModal(productsDelete(item.id), reload)} />
+          <Button icon={<EditOutlined />} title="O'zgartirish" onClick={() => handleEdit(item)} />
+          <Button icon={<DeleteOutlined />} danger title="O'chirish" onClick={() => deleteModal(productsDelete(item.id), reload)} />
         </Space>
       )
     }
   ];
 
   const handleRecommended = async (e, id) => {
-    const { succes } = await patchRequest.request({ url: productsPatch(id), data: { isRecommended: e } })
-    if (succes) {
+    const { success } = await patchRequest.request({ url: productsPatch(id), data: { isRecommended: e } })
+    if (success) {
       reload()
+
     }
   }
 
@@ -72,8 +73,8 @@ function Products() {
 
   const handleFinish = async (data) => {
     console.log(data)
-    const { succes } = isUpdate ? await patchRequest.request({ url: productsPatch(isUpdate), data }) : await postRequest.request({ data })
-    if (succes) {
+    const { success } = isUpdate ? await patchRequest.request({ url: productsPatch(isUpdate), data }) : await postRequest.request({ data })
+    if (success) {
       reload()
       handleCancel()
     }
@@ -97,27 +98,27 @@ function Products() {
   const items = [
     {
       key: '1',
-      label: 'Text fields',
+      label: 'Yozuv uchun',
       children: <FormTexts />,
     },
     {
       key: '2',
-      label: 'Rating fields',
+      label: 'Baholash uchun',
       children: <FormRatings />,
     },
     {
       key: '3',
-      label: 'Price fields',
+      label: 'Narx va Chegirma',
       children: <FormPrices />,
     },
     {
       key: '4',
-      label: 'Image fields',
+      label: 'Brand va rasmlar',
       children: <FormImages form={form} />,
     },
     {
       key: '5',
-      label: 'Characteristic fields',
+      label: 'Xususiyatlar',
       children: <FormCharacteristic form={form} />,
     },
   ];
@@ -127,14 +128,15 @@ function Products() {
     if (title && title.length) {
       form.setFieldValue('slug', slugify(title));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [title])
 
   return (
     <div>
-      <Card title='Products' extra={<Button onClick={handleAdd}>+ Add</Button>}>
+      <Card title='Mahsulotlar' extra={<Button onClick={handleAdd}>+ Qo'shish</Button>}>
         <Table dataSource={products} columns={columns} loading={loading} rowKey='id' />
 
-        <Drawer title={`${isUpdate ? 'Update' : 'Add'} product`} onClose={handleCancel} open={isModalOpen} width={1000} extra={<Button onClick={handleSubmit}>{isUpdate ? 'Update' : 'Add'}</Button>}>
+        <Drawer title={`Mahsulot${isUpdate ? 'ni O\'zgartirish' : ' Qo\'shish'}`} onClose={handleCancel} open={isModalOpen} width={1000} extra={<Button onClick={handleSubmit}>{isUpdate ? 'O\'zgartirish' : 'Qo\'shish'}</Button>}>
           <Form layout='vertical' form={form} onFinish={handleFinish}>
             <Tabs defaultActiveKey='1' items={items} type='card' />
           </Form>

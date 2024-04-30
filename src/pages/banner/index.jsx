@@ -52,13 +52,13 @@ function Banner() {
     return (
         <div>
             <Card extra={<Button onClick={handleAdd}>+ Add Banner</Button>} bannersloading={bannersloading}>
-                <Row gutter={[6,46]}>
+                <Row gutter={[6, 46]}>
                     {
                         banners?.map(({ id, image, title }) => (
                             <Card
                                 hoverable
-                                style={{display: 'flex', flexDirection: 'column',width: 400, height: 300}}
-                                cover={<img alt="example" height={200} style={{objectFit: 'contain'}} src={image} />}
+                                style={{ display: 'flex', flexDirection: 'column', width: 400, height: 300 }}
+                                cover={<img alt="example" height={200} style={{ objectFit: 'contain' }} src={image} />}
                                 key={id}>
                                 <Meta title={title} />
                                 <Button key="setting" danger onClick={() => handleDelete(id)} style={{ marginTop: 20, marginRight: 20 }}>

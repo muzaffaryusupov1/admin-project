@@ -15,7 +15,7 @@ function FormImages(props) {
     return (
         <Row>
             <Col span={24}>
-                <Form.Item label="Brand" name='brand_id' rules={[
+                <Form.Item label="Brandi" name='brand_id' rules={[
                     {
                         type: 'number',
                         required: true,
@@ -30,7 +30,7 @@ function FormImages(props) {
                 </Form.Item>
             </Col>
             <Col span={24}>
-                <Form.Item label="Category" name='category_id'>
+                <Form.Item label="Kategoriyasi" name='category_id'>
                     <Select
                         loading={categoriesLoading}
                         onChange={(e) => form.setFieldValue('category_id', e)}
@@ -39,14 +39,14 @@ function FormImages(props) {
                 </Form.Item>
             </Col>
             <Col span={24}>
-                <Form.Item label="Main image" name='mainImage' rules={[{
+                <Form.Item label="Bosh rasmi" name='mainImage' rules={[{
                     type: 'string',
                     required: true,
                     validator: (_, value) => {
                         if (isUrlValid(value)) {
                             return Promise.resolve();
                         }
-                        return Promise.reject(new Error('Is not URL!'))
+                        return Promise.reject(new Error('URL emas!'))
                     },
                 }]}>
                     <Input type='url' />
@@ -60,7 +60,7 @@ function FormImages(props) {
                         <>
                             {fields.map((field) => (
                                 <Form.Item
-                                    label='Image Url'
+                                    label='Rasmlar'
                                     key={field.key}
                                 >
                                     <Form.Item
@@ -74,13 +74,13 @@ function FormImages(props) {
                                                     if (isUrlValid(value)) {
                                                         return Promise.resolve();
                                                     }
-                                                    return Promise.reject(new Error('Is not URL!'))
+                                                    return Promise.reject(new Error('URL emas!'))
                                                 },
                                             },
                                         ]}
                                         noStyle
                                     >
-                                        <Input placeholder="passenger name" style={{ width: '90%', marginRight: 10 }} />
+                                        <Input placeholder="url" style={{ width: '90%', marginRight: 10 }} />
                                     </Form.Item>
                                     <MinusCircleOutlined
                                         className="dynamic-delete-button"
@@ -95,7 +95,7 @@ function FormImages(props) {
                                     style={{ width: '60%' }}
                                     icon={<PlusOutlined />}
                                 >
-                                    Add field
+                                    Rasm Qo'shish
                                 </Button>
                                 <Form.ErrorList errors={errors} />
                             </Form.Item>

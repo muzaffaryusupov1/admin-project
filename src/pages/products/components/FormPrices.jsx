@@ -4,7 +4,7 @@ function FormPrices() {
     return (
         <Row>
             <Col span={24}>
-                <Form.Item label="Price" name='price' rules={[{
+                <Form.Item label="Narxi" name='price' rules={[{
                     type: 'number',
                     required: true,
                     message: 'Maydon Bo\'sh'
@@ -13,7 +13,7 @@ function FormPrices() {
                 </Form.Item>
             </Col>
             <Col span={24}>
-                <Form.Item label="Old Price" name='oldPrice' rules={[{
+                <Form.Item label="Eski Narxi" name='oldPrice' rules={[{
                     type: 'number',
                     required: true,
                     message: 'Maydon Bo\'sh'
@@ -22,7 +22,7 @@ function FormPrices() {
                 </Form.Item>
             </Col>
             <Col span={24}>
-                <Form.Item label="Discount" name='discount' rules={[{
+                <Form.Item label="Chegirmasi" name='discount' rules={[{
                     type: 'number',
                     required: true,
                     message: 'Maydon Bo\'sh'
@@ -31,12 +31,12 @@ function FormPrices() {
                 </Form.Item>
             </Col>
             <Col span={24}>
-                <Form.Item label="Is offer" name='isOffer' rules={[{
+                <Form.Item label="Sotuvda borligi" name='isOffer' rules={[{
                     type: 'boolean',
                     required: true,
                     message: 'Maydon Bo\'sh'
                 }]}>
-                    <Switch checkedChildren="True" unCheckedChildren="False" />
+                    <Switch checkedChildren="Bor" unCheckedChildren="Yoq" />
                 </Form.Item>
             </Col>
         </Row>

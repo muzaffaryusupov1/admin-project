@@ -1,14 +1,19 @@
 import { useState } from 'react';
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
-import { Layout, Menu, Button } from 'antd';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { MenuFoldOutlined, MenuUnfoldOutlined, LogoutOutlined } from '@ant-design/icons';
+import { Layout, Menu, Button, Space, Row } from 'antd';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { routes } from '../../utils/routes';
 import { menuItems } from '../../constants/menuItems';
 const { Header, Sider, Content } = Layout;
 const AppLayout = () => {
     const [collapsed, setCollapsed] = useState(false);
     const location = useLocation()
-    
+    const navigate = useNavigate()
+
+    const handleLogOut = () => {
+        navigate('/logout')
+    }
+
     return (
         <Layout>
             <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -22,12 +27,15 @@ const AppLayout = () => {
             </Sider>
             <Layout>
                 <Header className='header'>
-                    <Button
-                        type="text"
-                        icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-                        onClick={() => setCollapsed(!collapsed)}
-                        className='collapse-button'
-                    />
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingRight: 24}}>
+                        <Button
+                            type="text"
+                            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                            onClick={() => setCollapsed(!collapsed)}
+                            className='collapse-button'
+                        />
+                        <Button icon={<LogoutOutlined />} onClick={handleLogOut}>Log out</Button>
+                    </div>
                 </Header>
                 <Content className='main-content'>
                     <Routes>

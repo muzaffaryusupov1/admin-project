@@ -14,45 +14,45 @@ function Dashboard() {
   let content = [
     {
       id: 1,
-      title: 'Total products',
+      title: 'Mahsulotlar',
       loading: productsLoading,
-      value: products?.length
+      value: products?.length + ' ta'
     },
     {
       id: 2,
-      title: 'Total categories',
+      title: 'Kategoriyalar',
       loading: categoriesLoading,
-      value: categories?.length
+      value: categories?.length + ' ta'
     },
     {
       id: 3,
-      title: 'Total banner',
+      title: 'Bannerlar',
       loading: bannerLoading,
-      value: banner?.length
+      value: banner?.length + ' ta'
     },
     {
       id: 4,
-      title: 'Total brands',
+      title: 'Brandlar',
       loading: brandsLoading,
-      value: brands?.length
+      value: brands?.length + ' ta'
     },
     {
       id: 5,
-      title: 'Total orders',
+      title: 'Jami Haridlar',
       loading: ordersLoading,
-      value: orders?.length
+      value: orders?.length + ' ta'
     },
     {
       id: 6,
-      title: 'Total prices',
+      title: 'Umumiy narxlar',
       loading: ordersLoading,
       value: orders?.reduce((a, b) => a + b.product.price, 0)?.toLocaleString() + " UZS"
     },
     {
       id: 7,
-      title: 'Total users',
+      title: 'Buyurtmalar',
       loading: usersLoading,
-      value: users?.length
+      value: users?.length + ' ta'
     },
   ]
 
@@ -62,20 +62,20 @@ function Dashboard() {
       dataIndex: 'id',
     },
     {
-      title: 'User name',
+      title: 'Ismi',
       dataIndex: 'fullname',
     },
     {
-      title: 'User address',
+      title: 'Manzili',
       dataIndex: 'address',
     },
     {
-      title: 'Product title',
+      title: 'Mahsulot Nomi',
       dataIndex: 'product',
       render: (product) => <span>{product.title}</span>
     },
     {
-      title: 'Product price',
+      title: 'Mahsulot narxi',
       dataIndex: 'product',
       render: (product) => <span>{product.price.toLocaleString()} UZS</span>
     },
@@ -83,7 +83,7 @@ function Dashboard() {
 
   return (
     <div>
-      <Typography.Title>Dashboard</Typography.Title>
+      <Typography.Title>Boshqaruv paneli</Typography.Title>
       <Row gutter={[12, 12]}>
         {
           content.map(({ id, title, loading, value }) => (
@@ -98,7 +98,7 @@ function Dashboard() {
           ))
         }
       </Row>
-      <Card title="Latest Orders" style={{marginTop: 24}}>
+      <Card title="Ohirgi buyurtmalar" style={{marginTop: 24}}>
         <Table pagination={false} dataSource={orders?.slice(0,8)} columns={columns} loading={ordersLoading} rowKey='id' />
       </Card>
     </div>

@@ -4,7 +4,7 @@ function FormRatings() {
   return (
     <Row>
       <Col span={24}>
-        <Form.Item label="Sold" name='sold' rules={[{
+        <Form.Item label="Nechta Sotilgani" name='sold' rules={[{
           type: 'number',
           required: true,
           message: 'Maydon Bo\'sh'
@@ -13,7 +13,7 @@ function FormRatings() {
         </Form.Item>
       </Col>
       <Col span={24}>
-        <Form.Item label="Review Count" name='reviewCount' rules={[{
+        <Form.Item label="Nechta sharh yozilgani" name='reviewCount' rules={[{
           type: 'number',
           required: true,
           message: 'Maydon Bo\'sh'
@@ -22,7 +22,7 @@ function FormRatings() {
         </Form.Item>
       </Col>
       <Col span={24}>
-        <Form.Item label="Rating" name='rating' rules={[{
+        <Form.Item label="Baholash" name='rating' rules={[{
           type: 'number',
           required: true,
           message: 'Maydon Bo\'sh'

@@ -14,10 +14,10 @@ function FormCharacteristic(props) {
                         <>
                             {fields.map((field, i) => (
                                 <Form.Item
-                                    label='Characteristic'
+                                    label='Xususiyatlari'
                                     key={i}
                                 >
-                                    <Space style={{alignItems: 'flex-start'}}>
+                                    <Space style={{ alignItems: 'flex-start' }}>
                                         <Form.Item
                                             {...field}
                                             name={[field.name, 'title']}
@@ -26,7 +26,7 @@ function FormCharacteristic(props) {
                                                 {
                                                     required: true,
                                                     whitespace: true,
-                                                    message: 'Please add title'
+                                                    message: 'Xususiyatni qo\'shing'
                                                 },
                                             ]}
                                         >
@@ -41,7 +41,7 @@ function FormCharacteristic(props) {
                                                 {
                                                     required: true,
                                                     whitespace: true,
-                                                    message: 'Please add value'
+                                                    message: 'Xususiyatni qo\'shing'
                                                 },
                                             ]}
                                         >
@@ -61,7 +61,7 @@ function FormCharacteristic(props) {
                                     style={{ width: '60%' }}
                                     icon={<PlusOutlined />}
                                 >
-                                    Add field
+                                    Xususiyat Qo'shish
                                 </Button>
                                 <Form.ErrorList errors={errors} />
                             </Form.Item>
