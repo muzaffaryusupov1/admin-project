@@ -27,20 +27,20 @@ function OrdersPage() {
             dataIndex: 'id',
         },
         {
-            title: 'User name',
+            title: 'Ismi',
             dataIndex: 'fullname',
         },
         {
-            title: 'User address',
+            title: 'Manzili',
             dataIndex: 'address',
         },
         {
-            title: 'Product title',
+            title: 'Mahsulot nomi',
             dataIndex: 'product',
             render: (product) => <span>{product.title}</span>
         },
         {
-            title: 'Actions',
+            title: 'Qo\'shimcha',
             render: (item) => (
                 <Button icon={<EyeOutlined />} onClick={() => handleView(item)} />
             )

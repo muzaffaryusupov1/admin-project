@@ -31,7 +31,7 @@ function FormPrices() {
                 </Form.Item>
             </Col>
             <Col span={24}>
-                <Form.Item label="Sotuvda borligi" name='isOffer' rules={[{
+                <Form.Item label="Chegirmagada borligi" name='isOffer' rules={[{
                     type: 'boolean',
                     required: true,
                     message: 'Maydon Bo\'sh'

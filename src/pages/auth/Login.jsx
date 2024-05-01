@@ -17,7 +17,7 @@ function Login() {
         addToken(res.data.token);
         navigate('/')
       }
-    }).catch(err => message.error('Parol Xato')).finally(() => setLoading(false))
+    }).catch(err => message.error('Ism yoki Parolni Xato kiritdingiz')).finally(() => setLoading(false))
   };
 
 
@@ -39,30 +39,30 @@ function Login() {
             rules={[
               {
                 required: true,
-                message: 'Please input your Username!',
+                message: 'Iltimos ismingizni kiriting!',
               },
             ]}
           >
-            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Ism" />
           </Form.Item>
           <Form.Item
             name="password"
             rules={[
               {
                 required: true,
-                message: 'Please input your Password!',
+                message: 'Iltimos parolingizni kiriting!',
               },
             ]}
           >
             <Input
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
-              placeholder="Password"
+              placeholder="Parol"
             />
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" style={{ width: '100%' }} loading={loading}>
-              Log in
+              Kirish
             </Button>
           </Form.Item>
         </Form>

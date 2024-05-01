@@ -41,9 +41,12 @@ body,
 .demo-logo-vertical{
     width: 70%;
     height: 40px;
-    background-color: #888;
-    border-radius: 8px;
     margin: 12px auto;
+}
+
+.demo-logo-vertical__image{
+    width: 100%;
+    height: 100%;
 }
 
 .login-page{

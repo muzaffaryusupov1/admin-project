@@ -51,7 +51,7 @@ function Banner() {
 
     return (
         <div>
-            <Card extra={<Button onClick={handleAdd}>+ Add Banner</Button>} bannersloading={bannersloading}>
+            <Card extra={<Button onClick={handleAdd}>+ Banner qo'shish</Button>} bannersloading={bannersloading}>
                 <Row gutter={[6, 46]}>
                     {
                         banners?.map(({ id, image, title }) => (
@@ -75,28 +75,28 @@ function Banner() {
 
             <Modal
                 maskClosable={false}
-                title={isUpdate ? "Update brand" : "Add brand"}
+                title={isUpdate ? "Bannerni yangilash" : "Banner qo'shish"}
                 open={isModalOpen}
                 onCancel={handleCancel}
-                okText={isUpdate ? 'Update' : 'Add'}
+                okText={isUpdate ? 'Yangilash' : 'Qo\'shish'}
                 onOk={handleSubmit}
             >
                 <Form form={form} onFinish={handleFinish}>
-                    <Form.Item label="Title" name='title' rules={[{
+                    <Form.Item label="Nomi" name='title' rules={[{
                         type: 'string',
                         required: true,
                         message: 'Maydon Bo\'sh'
                     }]}>
                         <Input placeholder='Apple' />
                     </Form.Item>
-                    <Form.Item label="Image url" name='image' rules={[{
+                    <Form.Item label="Rasm Urli" name='image' rules={[{
                         type: 'string',
                         required: true,
                         validator: (_, value) => {
                             if (isUrlValid(value)) {
                                 return Promise.resolve();
                             }
-                            return Promise.reject(new Error('Is not URL!'))
+                            return Promise.reject(new Error('URL emas!'))
                         },
                     }]}>
                         <Input type='url' />

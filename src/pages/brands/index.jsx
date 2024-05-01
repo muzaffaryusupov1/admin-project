@@ -52,7 +52,7 @@ function BrandPage() {
 
     return (
         <div>
-            <Card title='Brands' extra={<Button onClick={handleAdd}>+ Add Brands</Button>} loading={loading}>
+            <Card title='Brandlar' extra={<Button onClick={handleAdd}>+ Brand qo'shish</Button>} loading={loading}>
                 <Row gutter={[16, 16]}>
                     {
                         brands?.map(({ id, image, title }) => (
@@ -89,29 +89,29 @@ function BrandPage() {
 
             <Modal
                 maskClosable={false}
-                title={isUpdate ? "Update brand" : "Add brand"}
+                title={isUpdate ? "Brandni yangilash" : "Brand qo'shish"}
                 open={isModalOpen}
                 onCancel={handleCancel}
-                okText={isUpdate ? 'Update' : 'Add'}
+                okText={isUpdate ? 'Yangilash' : 'Qo\'shish'}
                 onOk={handleSubmit}
                 forceRender={true}
             >
                 <Form form={form} onFinish={handleFinish}>
-                    <Form.Item label="Title" name='title' rules={[{
+                    <Form.Item label="Nomi" name='title' rules={[{
                         type: 'string',
                         required: true,
                         message: 'Maydon Bo\'sh'
                     }]}>
                         <Input placeholder='Apple' />
                     </Form.Item>
-                    <Form.Item label="Image url" name='image' rules={[{
+                    <Form.Item label="Rasm Urli" name='image' rules={[{
                         type: 'string',
                         required: true,
                         validator: (_, value) => {
                             if (isUrlValid(value)) {
                                 return Promise.resolve();
                             }
-                            return Promise.reject(new Error('Is not URL!'))
+                            return Promise.reject(new Error('URL emas!'))
                         },
                     }]}>
                         <Input type='url' />

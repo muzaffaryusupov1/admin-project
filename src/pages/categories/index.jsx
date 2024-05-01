@@ -26,19 +26,19 @@ function Categories() {
       dataIndex: 'id',
     },
     {
-      title: 'Title',
+      title: 'Nomi',
       dataIndex: 'title',
     },
     {
-      title: 'Slug',
+      title: 'Link',
       dataIndex: 'slug',
     },
     {
-      title: 'Is recommended',
+      title: 'Rekomendatsiya',
       render: (item) => (
         <Switch
-          checkedChildren="True"
-          unCheckedChildren="False"
+          checkedChildren="Bor"
+          unCheckedChildren="Yo\'q"
           defaultChecked={item.isRecommended}
           onChange={(e) => handleRecommended(e, item.id)}
           disabled={recoommendedCategories.length >= 2 && !recoommendedCategories.find(el => el.id === item.id)}
@@ -47,7 +47,7 @@ function Categories() {
     },
 
     {
-      title: 'Actions',
+      title: 'Qo\'shimcha',
       render: (item) => (
         <Space>
           <Button icon={<EditOutlined />} disabled={isUpdate} onClick={() => handleEdit(item)} />
@@ -92,18 +92,18 @@ function Categories() {
 
   return (
     <div>
-      <Card title='Categories'>
+      <Card title='Kategoriyalar'>
         <Row gutter={[16, 16]}>
           <Col span={8} style={{ borderRight: '1px solid #f0f0f0' }}>
             <Form onFinish={handleFinish} layout='vertical' form={form}>
-              <Form.Item label="Title" name='title' rules={[{
+              <Form.Item label="Nomi" name='title' rules={[{
                 type: 'string',
                 required: true,
                 message: 'Maydon Bo\'sh'
               }]}>
-                <Input placeholder='Smartphones' />
+                <Input placeholder='Smartfonlar' />
               </Form.Item>
-              <Form.Item label="Image" name='image' rules={[{
+              <Form.Item label="Rasmi" name='image' rules={[{
                 type: 'string',
                 required: true,
                 message: 'Is not URL!',
@@ -116,20 +116,20 @@ function Categories() {
               }]}>
                 <Input />
               </Form.Item>
-              <Form.Item label="Is recommended" name='isRecommended' rules={[{
+              <Form.Item label="Rekomendatsiyaga chiqarish" name='isRecommended' rules={[{
                 type: 'boolean',
                 required: true,
                 message: 'Maydon Bo\'sh'
               }]}>
-                <Switch checkedChildren="True" unCheckedChildren="False" />
+                <Switch checkedChildren="Ha" unCheckedChildren="Yoq" />
               </Form.Item>
-              <Form.Item label="Slug" name='slug'>
+              <Form.Item label="Link" name='slug'>
                 <Input placeholder='smartphones' disabled value={title} />
               </Form.Item>
               <FormItem>
                 <Space>
-                  <Button type='primary' htmlType='submit' loading={loading}>{isUpdate ? 'Update' : 'Create'} category</Button>
-                  {isUpdate && <Button onClick={handleCancel}>Cancel</Button>}
+                  <Button type='primary' htmlType='submit' loading={loading}>Kategoriya{isUpdate ? 'ni yangilash' : ' Ochish'}</Button>
+                  {isUpdate && <Button onClick={handleCancel}>Bekor qilish</Button>}
                 </Space>
               </FormItem>
             </Form>
